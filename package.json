@@ -1,12 +1,29 @@
 {
   "name": "npm-stats",
-  "module": "index.ts",
   "type": "module",
   "private": true,
+  "main": "dist/index.js",
+  "bin": {
+    "npmstats": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "dev": "bun src/index.ts",
+    "build": "tsc"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "commander": "^14.0.3"
   }
 }
