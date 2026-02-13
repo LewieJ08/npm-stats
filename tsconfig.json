@@ -11,8 +11,9 @@
     // Bundler mode
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
     "noEmit": true,
+    "rootDir": "src",          
+    "outDir": "dist", 
 
     // Best practices
     "strict": true,
