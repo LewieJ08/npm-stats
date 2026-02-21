@@ -1,7 +1,6 @@
 {
   "name": "npm-stats",
   "type": "module",
-  "private": true,
   "main": "dist/index.js",
   "bin": {
     "npmstats": "dist/index.js"
