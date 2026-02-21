@@ -1,5 +1,5 @@
 {
-  "name": "npm-stats",
+  "name": "@lewiej08/npm-stats",
   "version": "1.0.0",
   "type": "module",
   "main": "dist/index.js",
