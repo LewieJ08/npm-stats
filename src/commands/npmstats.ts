@@ -1,6 +1,6 @@
 import { RegistryService } from "../services/registry.service";
 import { DownloadsService } from "../services/downloads.service";
-import { daysSince } from "../utils/time.util";
+import { daysSince } from "../utils/time.utils";
 
 export async function npmstats(pkg: string): Promise<void> {
     try {
