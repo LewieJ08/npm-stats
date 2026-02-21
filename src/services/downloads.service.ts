@@ -1,4 +1,4 @@
-import { Downloads } from "./downloads.types"
+import { MonthDownloads, RangeDownloads } from "./downloads.types"
 
 export class DownloadsService {
     private readonly baseUrl: string;
@@ -26,8 +26,14 @@ export class DownloadsService {
         pkg: string, 
         startDate: string, 
         endDate: string
-    ): Promise<Downloads> {
-        return this.request<Downloads>(`/range/${startDate}:${endDate}/${pkg}`, {
+    ): Promise<RangeDownloads> {
+        return this.request<RangeDownloads>(`/range/${startDate}:${endDate}/${pkg}`, {
+            method: 'GET'
+        })
+    }
+
+    public getDownloadsLastMonth(pkg: string): Promise<MonthDownloads> {
+        return this.request<MonthDownloads>(`/point/last-month/${pkg}` {
             method: 'GET'
         })
     }
