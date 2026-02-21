@@ -33,7 +33,7 @@ export class DownloadsService {
     }
 
     public getDownloadsLastMonth(pkg: string): Promise<MonthDownloads> {
-        return this.request<MonthDownloads>(`/point/last-month/${pkg}` {
+        return this.request<MonthDownloads>(`/point/last-month/${pkg}`, {
             method: 'GET'
         })
     }
