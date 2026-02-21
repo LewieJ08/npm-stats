@@ -6,12 +6,11 @@
     "npmstats": "dist/index.js"
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "scripts": {
     "dev": "bun src/index.ts",
-    "build": "tsc"
+    "build": "bunx --bun tsc"
   },
   "publishConfig": {
     "access": "public"
