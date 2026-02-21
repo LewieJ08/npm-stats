@@ -9,7 +9,7 @@ export interface RegistryInfo {
         created: string;
         modified: string;
     };
-    author: {
+    author?: {
         name: string
     };
     license: string;
