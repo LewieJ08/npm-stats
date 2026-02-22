@@ -6,7 +6,9 @@
     "npmstats": "dist/index.js"
   },
   "files": [
-    "dist"
+    "docs",
+    "dist",
+    "src"
   ],
   "scripts": {
     "dev": "bun src/index.ts",
