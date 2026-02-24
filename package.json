@@ -1,6 +1,7 @@
 {
   "name": "@lewiej08/npm-stats",
   "version": "1.0.2",
+  "license": "ISC",
   "main": "dist/index.js",
   "bin": {
     "npmstats": "dist/index.js"
