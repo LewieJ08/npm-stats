@@ -2,7 +2,7 @@ import { RegistryService } from "../services/registry.service";
 import { DownloadsService } from "../services/downloads.service";
 import { daysSince } from "../utils/time.utils";
 
-export async function npmstats(pkg: string): Promise<void> {
+export async function baseCommand(pkg: string): Promise<void> {
     try {
         const registry = new RegistryService(); 
         const downloads = new DownloadsService();
