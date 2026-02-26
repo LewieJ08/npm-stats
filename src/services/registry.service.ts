@@ -1,4 +1,4 @@
-import { RegistryInfo } from "./registry.types";
+import { PackageInfo } from "./registry.types";
 
 export class RegistryService {
     private readonly baseUrl: string;
