@@ -1,3 +1,4 @@
+import { ApiError, PackageNotFoundError } from "../errors/errors";
 import { MonthDownloads, RangeDownloads } from "./downloads.types"
 
 export class DownloadsService {
@@ -15,8 +16,12 @@ export class DownloadsService {
 
         const data = await response.json();
 
+        if (response.status === 404) {
+            throw new PackageNotFoundError()
+        }
+
         if (!response.ok) {
-            throw new Error(`${data}`)
+            throw new ApiError()
         }
 
         return data as T;
