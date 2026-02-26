@@ -1,6 +1,6 @@
 {
   "name": "@lewiej08/npm-stats",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "ISC",
   "main": "dist/index.js",
   "bin": {
@@ -15,7 +15,9 @@
     "dev": "bun src/index.ts",
     "build": "bunx --bun tsc"
   },
-  "keywords": ["cli"],
+  "keywords": [
+    "cli"
+  ],
   "author": "lewiej08",
   "publishConfig": {
     "access": "public"
