@@ -1,5 +1,6 @@
 import { RegistryService } from "../services/registry.service";
 import { DownloadsService } from "../services/downloads.service";
+import { CliError} from "../errors/errors";
 import { daysSince } from "../utils/time.utils";
 
 export async function baseCommand(pkg: string): Promise<void> {
@@ -46,11 +47,12 @@ export async function baseCommand(pkg: string): Promise<void> {
         console.log(`Maintainers: ${totalMaintainers}`);
         console.log(`License: ${pkgInfo.license}`);
     } catch (error: unknown) {
-        const errorMessage = error instanceof Error ? 
-            error.message 
-        : 
-            'Unknown Error Occured'
-        console.log(errorMessage);
+        if (error instanceof CliError) {
+            console.error(error.message);
+            process.exit(error.exitCode);
+        }
+
+        console.error(error)
         process.exit(1);
     }
 }   

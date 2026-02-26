@@ -1,4 +1,5 @@
-import { RegistryInfo } from "./registry.types";
+import { PackageInfo } from "./registry.types";
+import { ApiError, PackageNotFoundError } from "../errors/errors";
 
 export class RegistryService {
     private readonly baseUrl: string;
@@ -15,15 +16,19 @@ export class RegistryService {
 
         const data = await response.json();
 
+        if (response.status === 404) {
+            throw new PackageNotFoundError()
+        }
+
         if (!response.ok) {
-            throw new Error(`${data}`)
+            throw new ApiError()
         }
 
         return data as T;
     }
 
-    public getInfo(pkg: string): Promise<RegistryInfo> {
-        return this.request<RegistryInfo>(`/${pkg}`, {
+    public getInfo(pkg: string): Promise<PackageInfo> {
+        return this.request<PackageInfo>(`/${pkg}`, {
             method: 'GET'
         })
     }

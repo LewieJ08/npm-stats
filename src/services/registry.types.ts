@@ -3,7 +3,7 @@ type Maintainer = {
     email: string;
 } 
 
-export interface RegistryInfo {
+export interface PackageInfo {
     name: string;
     time: {
         created: string;
