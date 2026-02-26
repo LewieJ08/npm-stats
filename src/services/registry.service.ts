@@ -1,4 +1,4 @@
-import { RegistryInfo } from "./registry.types";
+import { PackageInfo } from "./registry.types";
 
 export class RegistryService {
     private readonly baseUrl: string;
@@ -22,8 +22,8 @@ export class RegistryService {
         return data as T;
     }
 
-    public getInfo(pkg: string): Promise<RegistryInfo> {
-        return this.request<RegistryInfo>(`/${pkg}`, {
+    public getInfo(pkg: string): Promise<PackageInfo> {
+        return this.request<PackageInfo>(`/${pkg}`, {
             method: 'GET'
         })
     }
