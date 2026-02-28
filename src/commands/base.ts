@@ -18,7 +18,8 @@ export async function baseCommand(pkg: string): Promise<void> {
         const daysSinceLastRelease = daysSince(lastRelease);
         
         // Fetch download info since start and last month
-        const pkgDownloads = await downloads.getDownloadsInRange(pkg, startDate, lastRelease);
+        const now = new Date().toISOString().split('T')[0]
+        const pkgDownloads = await downloads.getDownloadsInRange(pkg, startDate, now);
         const pkgDownloadsMonth = await downloads.getDownloadsLastMonth(pkg)
 
         // Calulate total downloads
