@@ -21,17 +21,3 @@ export class ApiError extends CliError {
         this.name = 'ApiError'
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
